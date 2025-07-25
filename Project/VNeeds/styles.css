@@ -1,0 +1,83 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #ffdab9;
+    padding: 1em;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+main {
+    padding: 2em;
+}
+
+#hero {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#item-list .item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+#item-list .item img {
+    max-width: 100%;
+}
+
+#item-list .price {
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.buy-button {
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+#search-filter {
+    text-align: center;
+    margin: 2em 0;
+}
+
+#search-filter input, #search-filter select {
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+footer {
+    background-color: #ffdab9;
+    padding: 1em;
+    text-align: center;
+    margin-top: 2em;
+}

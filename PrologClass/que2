@@ -1,0 +1,18 @@
+% Facts
+prerequisite(math101, math100).
+prerequisite(math102, math101).
+prerequisite(cs101, math100).
+prerequisite(cs102, cs101).
+prerequisite(cs102, math102).
+
+% Rules
+can_take(Student, Course) :- student_has_completed_prerequisites(Student, Course).
+can_take(Student, Course) :- \+ prerequisite(_, Course).
+
+student_has_completed_prerequisites(Student, Course) :-
+    prerequisite(Course, Prereq),
+    student_has_completed(Student, Prereq).
+
+% Facts (additional for testing)
+student_has_completed(alice, math100).
+student_has_completed(alice, math101)

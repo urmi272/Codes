@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure CAPTCHA System</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #3a6186, #89253e);
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .subheading {
+            font-size: 18px;
+            margin-top: -10px;
+        }
+
+        .captcha-box {
+            margin: 50px auto;
+            background: white;
+            color: black;
+            padding: 20px;
+            width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .captcha-image {
+            margin: 20px 0;
+        }
+
+        .captcha-input {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+         .verify-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .verify-btn:hover {
+            background: #218838;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+        }
+
+        .footer-link {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Secure CAPTCHA System</h1>
+        <div class="subheading">Enhancing security with AI-driven CAPTCHA technology</div>
+    </header>
+
+    <div class="captcha-box">
+        <h2>Prove You're Human</h2>
+        <img src="captcha.png" alt="CAPTCHA" class="captcha-image" height = "75px">
+        <input type="text" class="captcha-input" placeholder="Enter CAPTCHA">
+        <button class="verify-btn">Verify</button>
+        <br><br>
+        <a href="#" class="generate-btn">Generate New CAPTCHA</a>
+    </div>
+
+    <footer>
+        Why Choose Us?
+        <div>- AI-Powered Security</div>
+        <div>- Adaptive Technology</div>
+        <br>
+        <a href="#" class="footer-link">About Us</a>
+        <a href="#" class="footer-link">Contact</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+    </footer>
+</body>
+</html>

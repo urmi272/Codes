@@ -1,0 +1,22 @@
+/* Write your code here: */
+/*  selector */
+h1, h2{
+    color: blue;
+}
+/* child selector */
+.box > p {
+    color: firebrick;
+}
+/* descendant selector */
+.box li {
+    color: plum;
+}
+/* Chaining selector */
+li.done {
+    color: seagreen;
+}
+/* ancester and chaining */
+ul p.done {
+    color: orange;
+    font-size: 0.5rem;
+}

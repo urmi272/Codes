@@ -1,0 +1,21 @@
+html{
+  background-color: rgb(75, 8, 64);
+  text-align: center;
+}
+h1{
+    color: white;
+    font-family: "Libre Baskarville", serif;
+}
+p{
+    color: yellow;
+    font-size: 25px;
+}
+img{
+    width: 100%;
+    border: 5px solid black;
+}
+div{
+    width: 50%;
+    margin: auto;
+    padding: 40px;
+}

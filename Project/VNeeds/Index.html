@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VNeeds - Sustainable College Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>VNeeds</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">Events</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h2>Welcome to VNeeds</h2>
+            <p>The premier buy-and-sell platform designed exclusively for our college community!</p>
+        </section>
+
+        <section id="item-list">
+            <h2>Items for Sale</h2>
+            <div class="item">
+                <img src="item.jpg" alt="Item Image">
+                <h3>Item Title</h3>
+                <p>Item Description</p>
+                <p class="price">$100</p>
+                <button class="buy-button">Buy Now</button>
+            </div>
+            <!-- Repeat similar item blocks for more listings -->
+        </section>
+
+        <section id="search-filter">
+            <h2>Find What You Need</h2>
+            <input type="text" id="search-bar" placeholder="Search for items...">
+            <select id="category-filter">
+                <option value="">All Categories</option>
+                <option value="textbooks">Textbooks</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+                <option value="furniture">Furniture</option>
+            </select>
+        </section>
+
+        <form id="register-form">
+            <h2>Register</h2>
+            <input type="email" id="register-email" placeholder="College Email" required>
+            <input type="password" id="register-password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+        
+        <form id="login-form">
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="College Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <form id="new-item-form">
+            <h2>List an Item</h2>
+            <input type="text" id="item-title" placeholder="Title" required>
+            <textarea id="item-description" placeholder="Description" required></textarea>
+            <input type="number" id="item-price" placeholder="Price" required>
+            <input type="file" id="item-image" required>
+            <select id="item-category" required>
+                <option value="textbooks">Textbooks</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+                <option value="furniture">Furniture</option>
+            </select>
+            <button type="submit">List Item</button>
+        </form>
+
+        <section id="search-filter">
+            <input type="text" id="search-bar" placeholder="Search for items...">
+            <select id="category-filter">
+                <option value="">All Categories</option>
+                <option value="textbooks">Textbooks</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+                <option value="furniture">Furniture</option>
+            </select>
+            <select id="condition-filter">
+                <option value="">All Conditions</option>
+                <option value="new">New</option>
+                <option value="used">Used</option>
+            </select>
+        </section>
+        
+        <section id="messages">
+            <h2>Messages</h2>
+            <div id="chat-window">
+                <!-- Messages will be dynamically loaded here -->
+            </div>
+            <input type="text" id="message-input" placeholder="Type a message...">
+            <button id="send-button">Send</button>
+        </section>
+        
+        <section id="reviews">
+            <h2>Leave a Review</h2>
+            <textarea id="review-text" placeholder="Write your review here..." required></textarea>
+            <select id="review-rating" required>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select>
+            <button id="submit-review">Submit Review</button>
+        </section>
+        
+        <section id="wishlist">
+            <h2>Wishlist</h2>
+            <div id="wishlist-items">
+                <!-- Wishlist items will be dynamically loaded here -->
+            </div>
+        </section>
+        
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 VNeeds. All Rights Reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
