@@ -1,7 +1,0 @@
-flask
-opencv-python
-numpy
-mediapipe
-cvzone
-pillow
-google-generativeai
