@@ -2,17 +2,23 @@
 #include <vector>
 using namespace std;
 
-void rrotate(vector <int> &arr, int d){
-    int n = arr.size();
-    d = d % n;
-    vector<int> temp(n); 
-    for (int i = 0; i<n ; i++){
-        temp[(i + d) % n] = arr[i]; // Place each element in its new position temporarily 
-                                    // i + d gives the new index after rotation
-                                    // % n ensures it wraps around if it exceeds the size of the array
-    }
-    arr = temp;;
-};
+// void rrotate(vector <int> &arr, int d){
+//     int n = arr.size();
+//     d = d % n;
+//     vector<int> temp(n); 
+//     for (int i = 0; i<n ; i++){
+//         temp[(i + d) % n] = arr[i];
+//     }
+//     arr = temp;;
+// };
+
+#include <algorithm> // For std::reverse
+void rrotate(vector<int>& nums, int k) {
+        k = k % nums.size();
+        reverse(nums.begin(), nums.end());
+        reverse(nums.begin(), nums.begin() + k);
+        reverse(nums.begin() + k, nums.end()); //
+}
 
 int main (){
     int size, d;
