@@ -44,7 +44,7 @@ int main() {
     }
     int result = slargestNo(arr, size);
     int result2 = ssmallest(arr, size);
-    cout << "The second smalest number is: " << result2 << endl;
     cout << "The second largest number is: " << result << endl;
+    cout << "The second smalest number is: " << result2 << endl;
     return 0;
 }
