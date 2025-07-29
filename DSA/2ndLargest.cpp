@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <climits>
 using namespace std;
 
 int slargestNo(vector <int> &arr, int n){
@@ -17,6 +18,21 @@ int slargestNo(vector <int> &arr, int n){
     return slargest;
 };
 
+int ssmallest(vector <int> &arr, int n){
+    int smallest = arr[0];
+    int ssmallest = INT_MAX;
+    for (int i = 1; i<n ; i++){
+        if (arr[i]< smallest){
+            ssmallest = smallest;
+            smallest = arr[i];
+        }
+        else if (arr[i]< ssmallest && arr[i] != smallest){ 
+            ssmallest = arr[i];
+        }
+    }
+    return ssmallest;
+};
+
 int main() {
     int size;
     cout << "Enter the size of the array: ";
@@ -27,6 +43,8 @@ int main() {
         cin >> arr[i];
     }
     int result = slargestNo(arr, size);
+    int result2 = ssmallest(arr, size);
+    cout << "The second smalest number is: " << result2 << endl;
     cout << "The second largest number is: " << result << endl;
     return 0;
 }
