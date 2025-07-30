@@ -12,12 +12,20 @@ using namespace std;
 //     arr = temp;;
 // };
 
+//fuc to reverse the array
+// void reverse(int arr[], int start, int end) {
+//     while (start < end) {
+//         swap(arr[start], arr[end]);
+//         start++;
+//         end--;
+//     }
+// }
 #include <algorithm> // For std::reverse
 void rrotate(vector<int>& nums, int k) {
         k = k % nums.size();
-        reverse(nums.begin(), nums.end());
         reverse(nums.begin(), nums.begin() + k);
         reverse(nums.begin() + k, nums.end()); //
+        reverse(nums.begin(), nums.end());
 }
 
 int main (){
