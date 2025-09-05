@@ -1,32 +1,72 @@
 import java.util.*;
 import java.math.*;
-
-/**
- * PLA_Algorithms.java
- * A single-file Java reference implementing 18 classic algorithms from your PLA cheat sheet.
- * Each method includes a short explanation, usage notes, and time/space complexity.
- *
- * Compile:  javac PLA_Algorithms.java
- * Run demo:  java PLA_Algorithms
- */
 public class pla_algorithms {
-
     public static void main(String[] args) {
-        // Tiny demo showcase (kept short). Feel free to extend.
-        System.out.println("1) Simple Sieve up to 30: " + simpleSieve(30));
-        System.out.println("2) Segmented Sieve [10, 40]: " + segmentedSieve(10, 40));
-        System.out.println("3) phi(36): " + phi(36));
-        System.out.println("4) isStrobogrammatic(\"619\"): " + isStrobogrammatic("619"));
-        System.out.println("5) CRT for x≡2 (mod3), x≡3 (mod5), x≡2 (mod7): " + crt(new long[]{2,3,2}, new long[]{3,5,7}));
-        System.out.println("6) Bulbs ON after n=20 toggles: " + bulbsOn(20));
-        System.out.println("7) isBinaryPalindrome(9): " + isBinaryPalindrome(9)); // 9 -> 1001
-        System.out.println("8) Booth smallest rotation of 'bbaaccaadd': " + boothSmallestRotation("bbaaccaadd"));
-        System.out.println("9) gcd(84, 30): " + gcd(84, 30));
-        System.out.println("10) Karatsuba multiply 12345678 * 87654321: " + karatsuba(new BigInteger("12345678"), new BigInteger("87654321")));
-        System.out.println("11) Max 1s after one flip in [1,0,1,1,0,1]: " + maxOnesAfterFlip(new int[]{1,0,1,1,0,1}));
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Find primes up to: ");
+        int n = sc.nextInt();
+        System.out.println("1) Simple Sieve up to : "+ n + simpleSieve(n));
+
+        System.out.print("Enter L and R: ");
+        long L = sc.nextLong();
+        long R = sc.nextLong();
+        System.out.println("2) Segmented Sieve ["+ L + "," +R +"]: " + segmentedSieve(L, R));
+
+        System.out.println("Enter n for phi(n): ");
+        n = sc.nextInt();
+        System.out.println("3) phi(" +n + "): " + phi(n));
+
+        System.out.println("Enter string to check strobogrammatic: ");
+        String s = sc.next();
+        System.out.println("4) isStrobogrammatic: " + isStrobogrammatic(s));
+
+        System.out.println("Enter the number of congruences:");
+        int x = sc.nextInt();
+        long[] rem = new long[x];
+        long[] mod = new long[x];
+        System.out.println("Enter remainders:");
+        for (int i = 0; i < x; i++) rem[i] = sc.nextLong();
+        System.out.println("Enter moduli (pairwise coprime):");
+        for (int i = 0; i < x; i++) mod[i] = sc.nextLong();
+        System.out.println("5) CRT : " + crt(rem, mod));
+
+        System.out.println("Enter n for bulb toggles: ");
+        int y = sc.nextInt();
+        System.out.println("6) Bulbs ON after n toggles: " + bulbsOn(y));
+
+        System.out.println("Enter number for binary palindrome check: ");
+        int z = sc.nextInt();
+        System.out.println("7) isBinaryPalindrome: " + isBinaryPalindrome(z)); // 9 -> 1001
+
+        System.out.println("Enter string for Booth's smallest rotation: ");
+        String str = sc.next();
+        System.out.println("8) Booth smallest rotation: " + boothSmallestRotation(str));
+
+        System.out.println("Enter two numbers for GCD: ");
+        long a = sc.nextLong();
+        long b = sc.nextLong();
+        System.out.println("9) gcd: " + gcd(a, b));
+
+        System.out.println("Enter two large numbers for Karatsuba multiply: ");
+        // Using BigInteger to handle large numbers safely
+        String p = sc.next();
+        String q = sc.next();     
+        System.out.println("10) Karatsuba multiply: " + karatsuba(new BigInteger(p), new BigInteger(q)));
+
+        System.out.println("Enter binary array for max 1s after one flip:");
+        int[] arr = Arrays.stream(sc.next().split(",")).mapToInt(Integer::parseInt).toArray();
+        System.out.println("11) Max 1s after one flip: " + maxOnesAfterFlip(arr));
+
         System.out.println("12) Swap nibbles of 0xAB (171): " + swapNibbles(0xAB));
-        int[] a = {1,2,3,4,5,6,7}; rotateLeftBlockSwap(a, 2); System.out.println("13) Rotate left by 2: " + Arrays.toString(a));
-        System.out.println("14) Max product subarray of [2,3,-2,4]: " + maxProductSubarray(new int[]{2,3,-2,4}));
+
+        int[] a1 = {1,2,3,4,5,6,7}; rotateLeftBlockSwap(a1, 2); 
+        System.out.println("13) Rotate left by 2: " + Arrays.toString(a1));
+
+        System.out.println("Enter array for max product subarray:");
+        int[] a2 = Arrays.stream(sc.next().split(",")).mapToInt(Integer::parseInt).toArray();
+        System.out.println("14) Max product subarray: " + maxProductSubarray(a2));
+
         int[][] mat = {
             {1, 1, 1, 0, 0, 0},
             {0, 1, 0, 0, 0, 0},
@@ -36,9 +76,16 @@ public class pla_algorithms {
             {0, 0, 1, 2, 4, 0}
         };
         System.out.println("15) Max hourglass sum: " + maxHourglassSum(mat));
+
         System.out.println("16) Max equilibrium sum of [2,3,1,2,2,3,1]: " + maxEquilibriumSum(new int[]{2,3,1,2,2,3,1}));
+
         System.out.println("17) Leaders in [16,17,4,3,5,2]: " + leaders(new int[]{16,17,4,3,5,2}));
-        System.out.println("18) Majority element of [2,2,1,2,3,2,2]: " + majorityElement(new int[]{2,2,1,2,3,2,2}).orElse(null));
+
+        System.out.println("Enter array for majority element (>n/2):");
+        int[] a3 = Arrays.stream(sc.next().split(",")).mapToInt(Integer::parseInt).toArray();
+        System.out.println("18) Majority element of [2,2,1,2,3,2,2]: " + majorityElement(a3).orElse(null));
+
+        sc.close();
     }
 
     // -------------------------------------------------------------
