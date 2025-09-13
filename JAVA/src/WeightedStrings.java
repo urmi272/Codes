@@ -12,6 +12,7 @@ public class WeightedStrings {
         Map<Character, Integer> weights = new HashMap<>();
         weights.put('a', 1);
         weights.put('b', 2);
+        weights.put('c', 3);
         weights.put('d', 4);
         // Add more weights for other characters if needed
 
