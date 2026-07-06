@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <p>Rock Paper Scissors</p>
+    
+    <button onclick="playGame('rock')">Rock</button>
+    <button onclick="playGame('paper')">Paper</button>
+    <button onclick="playGame('scissors')">Scissors</button>
+
+    <script>
+        function pickComputerMove(){
+            const randomNo = Math.random();
+            let computerMove = '';
+
+            if(randomNo >= 0 && randomNo < 1/3){
+                computerMove = 'rock';
+            } else if(randomNo >= 1/3 && randomNo < 2/3){
+                computerMove = 'paper';
+            } else {
+                computerMove = 'scissors';
+            }
+            return computerMove; 
+        }
+
+        function playGame(playerMove){
+            const computerMove = pickComputerMove();
+            let result = '';
+
+            if(playerMove === computerMove){
+                result = 'Tie.';
+            } else if(
+                (playerMove === 'rock' && computerMove === 'scissors') ||
+                (playerMove === 'paper' && computerMove === 'rock') ||
+                (playerMove === 'scissors' && computerMove === 'paper')
+            ){
+                result = 'You Win.';
+            } else {
+                result = 'You Lose.';
+            }
+
+            alert(`You picked ${playerMove}, Computer Picked ${computerMove}. ${result}`);
+        }
+    </script>
+</body>
+</html>
